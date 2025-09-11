@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daiyana Brooks Bio</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f0f4f8, #ffffff);
+            color: #333;
+        }
+        h1, h2 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.4rem;
+            border-bottom: 2px solid #004080;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Layout Containers */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* About Me Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: #fff;
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .bio-text {
+            flex: 2.5;
+            max-width: none;
+        }
+        .bio-text p {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        /* Photo frame */
+        .photo-frame {
+            position: relative;
+            flex: 1.2;
+            min-width: 250px;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .photo-frame img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .photo-frame img.active {
+            opacity: 1;
+        }
+
+        /* Courses section */
+        .courses {
+            margin-top: 50px;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+        }
+        .courses-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .courses ul {
+            margin: 15px 0 0;
+            padding-left: 20px;
+            flex: 2;
+        }
+        .courses li {
+            margin: 6px 0;
+            font-size: 1rem;
+        }
+
+        /* Static Image Next to Courses */
+
+        .photo-frame-aggie {
+            flex: 1;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .photo-frame-aggie img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* Link button styling */
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #fff;
+            background: #004080;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        a:hover {
+            background: #0066cc;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .bio-text {
+                max-width: 100%;
+            }
+            .photo-frame {
+                max-width: 300px;
+            }
+            .courses-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .Aggie-img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>About Me</h1>
+
+    <!--  Bio Section -->
+    <div class="about-container">
+        <div class="bio-text">
+            <p>
+                My name is <strong>Daiyana Brooks</strong>. I am a junior at
+                <em>North Carolina Agricultural and Technical State University</em>, pursuing a Bachelor’s degree in
+                Computer Science. I was born and raised in Georgia. So far, I have completed two successful summer
+                internships at <strong>Amazon</strong> as a Software Development Engineer Intern, where I architected
+                scalable systems and developed real-time dashboards for production use. These experiences have
+                strengthened my skills in distributed systems, full-stack development, and cloud computing.
+            </p>
+        </div>
+
+        <!-- Alternating photo gallery-->
+        <div class="photo-frame">
+            <img src="img/img1.jpg" alt="Photo 1" class="active">
+            <img src="img/img3.jpg" alt="Photo 3">
+        </div>
+    </div>
+
+    <!-- Course section-->
+    <section class="courses">
+        <h2>My Courses This Semester</h2>
+        <div class="courses-container">
+            <!-- Course list -->
+            <ul>
+                <li>Internet Systems</li>
+                <li>Programming Languages</li>
+                <li>Computer Architecture</li>
+                <li>General Chemistry 107</li>
+                <li>General Chemistry 117 Lab</li>
+            </ul>
+            <!-- photo frame for image 4-->
+            <div class="photo-frame-aggie">
+                <img src="img/img2.jpg" alt="image 2" class="Aggie-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Link to introduction page -->
+    <p><a href="introduction.html">Go to Introduction Page</a></p>
+</div>
+
+<!-- === Slideshow Rotation === -->
+<script>
+    const images = document.querySelectorAll('.photo-frame img');
+    let current = 0;
+    setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+    }, 3000);
+</script>
+</body>
+</html>
