@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            margin: 20px auto;
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 8px;
+            font-size: 14px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h2>JavaScript Calculator</h2>
+
+<form id="calcForm">
+    <input type="text" id="x" placeholder="Enter first number" required>
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="y" placeholder="Enter second number" required>
+    <button type="submit">Calculate</button>
+</form>
+
+<button id="finishBtn">Finish & Show Summary</button>
+
+<div id="tables"></div>
+
+<script src="calculator.js"></script>
+<!-- Link back -->
+<p><a href="index.html">Back to Index Page</a></p>
+</body>
+</html>
